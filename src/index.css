@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cosmic-bg: #0f0a1e;
+  --safe-top: env(safe-area-inset-top);
+  --safe-bottom: env(safe-area-inset-bottom);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+    height: 100%;
+  }
+
+  body {
+    @apply bg-cosmic-900 text-white antialiased overflow-hidden;
+    background: var(--cosmic-bg);
+    height: 100%;
+    width: 100%;
+    position: fixed; /* Prevents bounce scroll on mobile browsers */
+  }
+
+  #root {
+    @apply min-h-full flex flex-col;
+  }
+
+  /* Custom Scrollbar for modern feel */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(15, 10, 30, 0.1);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(77, 159, 255, 0.3);
+    border-radius: 10px;
+  }
+}
+
+@layer components {
+  .safe-area-top { padding-top: var(--safe-top); }
+  .safe-area-bottom { padding-bottom: var(--safe-bottom); }
+  
+  .text-glow {
+    text-shadow: 0 0 10px rgba(77, 159, 255, 0.5);
+  }
+  
+  .text-glow-purple {
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+  }
+}
+
+/* Fix for iOS viewport height */
+.h-screen-ios {
+  height: -webkit-fill-available;
+}
