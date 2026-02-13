@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- App Title & Description -->
+    <title>AI Palm Reader – Tarot & Astrology Guidance</title>
+    <meta name="description" content="Discover your destiny through AI-powered palm reading, tarot cards, daily horoscope, and personalized spiritual guidance. Your cosmic journey awaits." />
+    <meta name="keywords" content="palm reading, tarot cards, astrology, horoscope, AI, spiritual guidance, fortune telling, zodiac, palmistry" />
+    <meta name="author" content="AI Palm Reader" />
+    
+    <!-- Theme & Status Bar -->
+    <meta name="theme-color" content="#0f0a1e" />
+    <meta name="msapplication-TileColor" content="#0f0a1e" />
+    <meta name="msapplication-navbutton-color" content="#0f0a1e" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- PWA & Mobile App Meta -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Palm Reader" />
+    <meta name="application-name" content="AI Palm Reader" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-167x167.png" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Microsoft Tile -->
+    <meta name="msapplication-TileImage" content="/icons/icon-144x144.png" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ai-palm-reader.app/" />
+    <meta property="og:title" content="AI Palm Reader – Tarot & Astrology Guidance" />
+    <meta property="og:description" content="Discover your destiny through AI-powered palm reading, tarot cards, and personalized spiritual guidance." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="AI Palm Reader" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://ai-palm-reader.app/" />
+    <meta name="twitter:title" content="AI Palm Reader – Tarot & Astrology Guidance" />
+    <meta name="twitter:description" content="Discover your destiny through AI-powered palm reading, tarot cards, and personalized spiritual guidance." />
+    <meta name="twitter:image" content="/og-image.png" />
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://openrouter.ai" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="/icons/icon-192x192.png" as="image" />
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://openrouter.ai" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ai-palm-reader.app/" />
+    
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    
+    <!-- Disable auto-detection -->
+    <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
+    
+    <!-- Critical Inline Styles (Prevent Flash) -->
+    <style>
+      /* Critical CSS - Prevents FOUC */
+      :root {
+        --color-bg-primary: #0f0a1e;
+        --color-bg-secondary: #1a1333;
+        --color-accent: #4d9fff;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      html {
+        height: 100%;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+      }
+      
+      body {
+        min-height: 100%;
+        background: linear-gradient(180deg, #0f0a1e 0%, #1a1333 50%, #251c48 100%);
+        background-attachment: fixed;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        color: #ffffff;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      /* Initial Loading Screen */
+      .initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, #0f0a1e 0%, #1a1333 50%, #251c48 100%);
+        z-index: 9999;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+      
+      .initial-loader.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+      
+      .loader-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 24px;
+        animation: pulse-loader 1.5s ease-in-out infinite;
+      }
+      
+      .loader-text {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      
+      @keyframes pulse-loader {
+        0%, 100% { 
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% { 
+          transform: scale(1.1);
+          opacity: 0.7;
+        }
+      }
+      
+      /* No JS Fallback */
+      .no-js-message {
+        display: none;
+        text-align: center;
+        padding: 40px 20px;
+      }
+      
+      html.no-js .no-js-message {
+        display: block;
+      }
+      
+      html.no-js .initial-loader {
+        display: none;
+      }
+    </style>
+    
+    <!-- No JS Detection -->
+    <script>
+      document.documentElement.classList.remove('no-js');
+    </script>
+    <noscript>
+      <style>
+        .initial-loader { display: none !important; }
+        .no-js-message { display: block !important; }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <!-- Initial Loader (Hidden when React loads) -->
+    <div class="initial-loader" id="initial-loader">
+      <svg class="loader-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" stroke="url(#gradient)" stroke-width="3" fill="none" opacity="0.3"/>
+        <path d="M50 10 C30 30, 25 50, 30 70 C35 85, 50 90, 50 90 C50 90, 65 85, 70 70 C75 50, 70 30, 50 10" 
+              stroke="url(#gradient)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="8" fill="url(#gradient)"/>
+        <circle cx="35" cy="45" r="3" fill="#4d9fff" opacity="0.8"/>
+        <circle cx="65" cy="45" r="3" fill="#a855f7" opacity="0.8"/>
+        <circle cx="50" cy="65" r="3" fill="#00f5ff" opacity="0.8"/>
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4d9fff"/>
+            <stop offset="100%" stop-color="#a855f7"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="loader-text">Loading...</span>
+    </div>
+    
+    <!-- No JavaScript Message -->
+    <div class="no-js-message">
+      <h1>JavaScript Required</h1>
+      <p>Please enable JavaScript to use AI Palm Reader.</p>
+    </div>
+    
+    <!-- React Root -->
+    <div id="root"></div>
+    
+    <!-- Main Script -->
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Hide Loader Script -->
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var loader = document.getElementById('initial-loader');
+          if (loader) {
+            loader.classList.add('hidden');
+            setTimeout(function() {
+              loader.remove();
+            }, 500);
+          }
+        }, 100);
+      });
+    </script>
+  </body>
+  </html>
